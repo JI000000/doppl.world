@@ -1,0 +1,58 @@
+---
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "Guides", href: "/guides" },
+  { name: "Reviews", href: "/reviews" },
+  { name: "Blog", href: "/blog" },
+];
+---
+<header class="bg-white/95 backdrop-blur-sm dark:bg-slate-900/75 dark:backdrop-blur-sm fixed top-0 left-0 right-0 z-50 border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center space-x-2">
+          <span class="font-bold text-xl text-slate-800 dark:text-white">doppl.</span>
+          <span class="font-bold text-xl text-primary-700">world</span>
+        </a>
+      </div>
+      <nav class="hidden md:flex md:space-x-8">
+        {navLinks.map(link => (
+          <a href={link.href} class="text-slate-600 dark:text-slate-300 hover:text-primary-700 dark:hover:text-primary-700 transition-colors duration-200">
+            {link.name}
+          </a>
+        ))}
+      </nav>
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none">
+          <span class="sr-only">Open main menu</span>
+          <svg id="menu-icon-open" class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="menu-icon-close" class="h-6 w-6 hidden" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden pb-4">
+    <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      {navLinks.map(link => (
+        <a href={link.href} class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-primary-700">
+          {link.name}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+<script>
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIconOpen = document.getElementById("menu-icon-open");
+  const menuIconClose = document.getElementById("menu-icon-close");
+  mobileMenuButton.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+    menuIconOpen.classList.toggle("hidden");
+    menuIconClose.classList.toggle("hidden");
+  });
+</script>
