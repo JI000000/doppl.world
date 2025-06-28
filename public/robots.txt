@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://doppl.world/sitemap-index.xml 
