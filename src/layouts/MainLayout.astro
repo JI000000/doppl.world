@@ -14,7 +14,7 @@ const { title, description = 'Your ultimate guide to mastering Google\'s Doppl A
 <!doctype html>
 <html lang="en" class="scroll-smooth">
 	<head>
-		<meta charset="UTF--8" />
+		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -43,11 +43,15 @@ const { title, description = 'Your ultimate guide to mastering Google\'s Doppl A
       gtag('config', 'G-2MJ726G4EF');
     </script>
 	</head>
-	<body class="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 antialiased">
+	<body class="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 antialiased min-h-screen flex flex-col">
 		<Header />
-		<main class="pt-16">
+		<main class="pt-16 flex-grow">
 			<slot />
 		</main>
 		<Footer />
+
+    <script>
+      var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+    </script>
 	</body>
 </html> 

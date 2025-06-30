@@ -1,0 +1,102 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout 
+  title="Doppl App Availability Tracker"
+  description="Is Google's Doppl app available in your country? Our live tracker provides the latest official availability status for iOS and Android across the US, UK, Europe, Canada, and more."
+>
+  <div class="container mx-auto px-6 py-12 max-w-4xl">
+    <h1 class="text-4xl font-bold mb-4 text-center">Doppl App Availability Tracker</h1>
+    <p class="text-slate-500 dark:text-slate-400 text-lg mb-8 text-center">
+      Last Updated: <span class="font-semibold text-teal-500">June 30, 2025</span>
+    </p>
+
+    <p class="mb-10 text-center">
+      We are actively monitoring the official channels for any news on Google's Doppl app rollout. 
+      This page is your single source of truth for its availability.
+    </p>
+
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg">
+        <thead class="bg-slate-50 dark:bg-slate-700">
+          <tr>
+            <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 dark:text-slate-300 uppercase tracking-wider">Country / Region</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 dark:text-slate-300 uppercase tracking-wider">iOS (App Store)</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 dark:text-slate-300 uppercase tracking-wider">Android (Google Play)</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 dark:text-slate-300 uppercase tracking-wider">Notes</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+          <tr class="bg-teal-50 dark:bg-teal-900/20">
+            <td class="px-6 py-4 whitespace-nowrap font-medium">United States</td>
+            <td class="px-6 py-4 whitespace-nowrap text-green-600 dark:text-green-400 font-semibold">Available</td>
+            <td class="px-6 py-4 whitespace-nowrap text-green-600 dark:text-green-400 font-semibold">Available</td>
+            <td class="px-6 py-4 whitespace-nowrap">Android version is currently Pixel-only.</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4 whitespace-nowrap font-medium">Canada</td>
+            <td class="px-6 py-4 whitespace-nowrap text-slate-500">Not Yet Available</td>
+            <td class="px-6 py-4 whitespace-nowrap text-slate-500">Not Yet Available</td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4 whitespace-nowrap font-medium">United Kingdom</td>
+            <td class="px-6 py-4 whitespace-nowrap text-slate-500">Not Yet Available</td>
+            <td class="px-6 py-4 whitespace-nowrap text-slate-500">Not Yet Available</td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4 whitespace-nowrap font-medium">Europe (EU)</td>
+            <td class="px-6 py-4 whitespace-nowrap text-slate-500">Not Yet Available</td>
+            <td class="px-6 py-4 whitespace-nowrap text-slate-500">Not Yet Available</td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4 whitespace-nowrap font-medium">Australia</td>
+            <td class="px-6 py-4 whitespace-nowrap text-slate-500">Not Yet Available</td>
+            <td class="px-6 py-4 whitespace-nowrap text-slate-500">Not Yet Available</td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+          </tr>
+           <tr>
+            <td class="px-6 py-4 whitespace-nowrap font-medium">India</td>
+            <td class="px-6 py-4 whitespace-nowrap text-slate-500">Not Yet Available</td>
+            <td class="px-6 py-4 whitespace-nowrap text-slate-500">Not Yet Available</td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4 whitespace-nowrap font-medium">China</td>
+            <td class="px-6 py-4 whitespace-nowrap text-slate-500">Not Yet Available</td>
+            <td class="px-6 py-4 whitespace-nowrap text-slate-500">Not Yet Available</td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4 whitespace-nowrap font-medium">Japan</td>
+            <td class="px-6 py-4 whitespace-nowrap text-slate-500">Not Yet Available</td>
+            <td class="px-6 py-4 whitespace-nowrap text-slate-500">Not Yet Available</td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4 whitespace-nowrap font-medium">South Korea</td>
+            <td class="px-6 py-4 whitespace-nowrap text-slate-500">Not Yet Available</td>
+            <td class="px-6 py-4 whitespace-nowrap text-slate-500">Not Yet Available</td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-12 p-6 bg-slate-100 dark:bg-slate-800 rounded-lg text-center">
+      <h3 class="text-xl font-bold mb-2">Want to be the first to know?</h3>
+      <p class="mb-4">
+        Want to be the first to know when Doppl launches in your country? Join our newsletter for updates.
+      </p>
+      <a 
+        href="/subscribe"
+        class="inline-block bg-slate-800 dark:bg-slate-200 text-white dark:text-slate-900 font-bold py-3 px-8 rounded-lg hover:bg-slate-700 dark:hover:bg-white transition-colors"
+      >
+        Get Notified
+      </a>
+    </div>
+  </div>
+</MainLayout> 

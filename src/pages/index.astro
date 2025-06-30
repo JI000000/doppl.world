@@ -48,4 +48,20 @@ const posts = (await Astro.glob<MarkdownInstance<Post>>('./blog/*.md')).sort(
       </div>
     </div>
   </section>
+
+  <section id="newsletter" class="py-20 bg-slate-50 dark:bg-slate-800">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-2 text-slate-900 dark:text-white">Stay Ahead with doppl.world</h2>
+      <p class="text-slate-500 dark:text-slate-400 mb-6 max-w-xl mx-auto">
+        Join our community to get the latest Doppl tips, guides, and availability updates delivered right to your inbox.
+      </p>
+      <a 
+        href="/subscribe"
+        class="inline-block bg-slate-800 dark:bg-slate-200 text-white dark:text-slate-900 font-bold py-4 px-10 rounded-lg hover:bg-slate-700 dark:hover:bg-white transition-colors"
+      >
+        Subscribe Now
+      </a>
+    </div>
+  </section>
+
 </MainLayout>

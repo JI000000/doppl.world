@@ -1,0 +1,35 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import type { MarkdownInstance } from 'astro';
+
+interface Post {
+  title: string;
+  description: string;
+  pubDate: string;
+  author: string;
+}
+
+const posts = (await Astro.glob<MarkdownInstance<Post>>('./*.md')).sort(
+  (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+);
+---
+<MainLayout title="Blog - All Articles" description="Explore all our articles, guides, and reviews for the Doppl AI fashion app.">
+  <section id="latest-articles" class="py-20 md:py-24">
+    <div class="container mx-auto px-6">
+      <h1 class="text-4xl font-bold text-center text-slate-900 dark:text-white mb-12">
+        All Articles & Guides
+      </h1>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2 max-w-5xl mx-auto">
+        {posts.map(post => (
+          <ArticleCard
+            title={post.frontmatter.title}
+            description={post.frontmatter.description}
+            pubDate={new Date(post.frontmatter.pubDate)}
+            url={post.url!}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</MainLayout> 

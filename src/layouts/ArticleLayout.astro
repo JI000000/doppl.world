@@ -1,11 +1,51 @@
----
+image.png---
 import MainLayout from "./MainLayout.astro";
 const { frontmatter } = Astro.props;
 ---
-<MainLayout title={frontmatter.title}>
-  <article class="max-w-3xl mx-auto px-4 py-12">
+<MainLayout title={frontmatter.title} description={frontmatter.description}>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": frontmatter.title,
+    "description": frontmatter.description,
+    "image": new URL(frontmatter.image, Astro.url.origin).href,  
+    "datePublished": new URL(frontmatter.pubDate, Astro.url.origin).href,
+    "author": {
+      "@type": "Organization",
+      "name": "doppl.world",
+      "url": Astro.url.origin
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "doppl.world",
+      "logo": {
+        "@type": "ImageObject",
+        "url": new URL("/favicon.svg", Astro.url.origin).href
+      }
+    }
+  })} />
+
+  <article class="container mx-auto px-6 py-12 max-w-4xl">
+    <h1 class="text-4xl font-bold mb-2">{frontmatter.title}</h1>
+    <p class="text-slate-500 dark:text-slate-400 mb-8">
+      Posted on {new Date(frontmatter.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+    </p>
     <div class="prose dark:prose-invert max-w-none">
-        <slot />
+      <slot />
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-700 text-center">
+      <h3 class="text-xl font-bold mb-2">Enjoyed this article?</h3>
+      <p class="text-slate-500 dark:text-slate-400 mb-4">
+        Stay up to date with the latest Doppl news and guides by joining our community.
+      </p>
+      <a 
+        href="/subscribe" 
+        class="inline-block bg-teal-500 text-white font-bold py-3 px-8 rounded-lg hover:bg-teal-600 transition-colors"
+      >
+        Subscribe to Our Newsletter
+      </a>
     </div>
   </article>
 </MainLayout>
